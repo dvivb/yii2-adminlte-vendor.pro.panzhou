@@ -2,42 +2,43 @@
 ## Definitions
 - A   :     alphabetical uppercasing
 - &   :     alfanumeric uppercasing
-- #  :     hexadecimal
+- \#  :     hexadecimal
 
 ## Aliases
 ### URL
 An URL mask for entering valid FTP, HTTP or HTTPS addresses.
 
 ```javascript
-Inputmask("url").mask(selector);
+$(document).ready(function(){
+   $(selector).inputmask("url");
+});
 ```
 
 ### IP address
 An IP address alias for entering valid IP addresses.
 
 ```javascript
-Inputmask("ip").mask(selector);
+$(document).ready(function(){
+   $(selector).inputmask("ip");
+});
 ```
 
 ### Email
 An email mask for entering valid email addresses.
 
 ```javascript
-Inputmask("email").mask(selector);
+$(document).ready(function(){
+   $(selector).inputmask("email");
+});
 ```
 
 ### MAC
 An MAC mask for entering valid MAC addresses.
 
 ```javascript
-Inputmask("mac").mask(selector);
-```
-
-### VIN (Vehicle identification number)
-An VIN mask for entering valid VIN codes.
-
-```javascript
-Inputmask("vin").mask(selector);
+$(document).ready(function(){
+   $(selector).inputmask("mac");
+});
 ```
 
 You can find/modify/extend these aliases in the inputmask.extensions.js

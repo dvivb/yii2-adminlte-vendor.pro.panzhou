@@ -52,7 +52,7 @@ foreach (\dmstr\helpers\Metadata::getModules() as $name => $module) {
     $role                        = $name;
 
     $defaultItem = [
-        'icon' => 'cube',
+        'icon' => 'fa fa-cube',
         'label'   => $name,
         'url'     => ['/' . $name],
         'visible' => Yii::$app->user->can($role) || (Yii::$app->user->identity && Yii::$app->user->identity->isAdmin),
@@ -71,7 +71,7 @@ foreach (\dmstr\helpers\Metadata::getModules() as $name => $module) {
             continue 2;
             break;
         default:
-            $defaultItem['icon'] = 'circle-o';
+            $defaultItem['icon'] = 'fa fa-circle-o';
             $developerMenuItems[] = $defaultItem;
             break;
     }
@@ -81,7 +81,7 @@ foreach (\dmstr\helpers\Metadata::getModules() as $name => $module) {
 if (Yii::$app->user->identity && Yii::$app->user->identity->isAdmin) {
     $menuItems[] = [
         'url' => '#',
-        'icon' => 'cog',
+        'icon' => 'fa fa-cog',
         'label'   => 'Developer',
         'items'   => $developerMenuItems,
         'options' => ['class' => 'treeview'],

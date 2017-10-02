@@ -17,11 +17,7 @@ define([
 	"tests_regex",
 	"tests_escape",
 	"tests_attributes",
-	"tests_alternations",
-	"tests_jitmasking",
-	"tests_jquery_inputmask",
-	"tests_option",
-	"tests_inputeventonly"
+	"tests_jquery_inputmask"
 ], function(qunit) {
 	qunit.load();
 	qunit.start();

@@ -13,7 +13,7 @@ define([
 
 qunit.module("Regex masks");
 
-qunit.test("inputmask(\"Regex\", { regex: \"[0-9]*\"});", function(assert) {
+test("inputmask(\"Regex\", { regex: \"[0-9]*\"});", function() {
 	var $fixture = $("#qunit-fixture");
 	$fixture.append('<input type="text" id="testmask" />');
 	var testmask = document.getElementById("testmask");
@@ -24,18 +24,21 @@ qunit.test("inputmask(\"Regex\", { regex: \"[0-9]*\"});", function(assert) {
 	testmask.focus();
 	$("#testmask").Type("123abc45");
 
-	assert.equal(testmask.value, "12345", "Result " + testmask.value);
+	equal(testmask.value, "12345", "Result " + testmask.value);
+
+	$("#testmask").remove();
 });
 
-qunit.test("inputmask(\"Regex\", { regex: \"[0-9]*\"}); ~ isComplete", function(assert) {
-	var $fixture = $("#qunit-fixture"), done = assert.async();
+asyncTest("inputmask(\"Regex\", { regex: \"[0-9]*\"}); ~ isComplete", function() {
+	var $fixture = $("#qunit-fixture");
 	$fixture.append('<input type="text" id="testmask" />');
 	var testmask = document.getElementById("testmask");
 	Inputmask("Regex", {
 		regex: "[0-9]*",
 		oncomplete: function() {
-			assert.equal(testmask.value, "1", "Result " + testmask.value);
-			done();
+			equal(testmask.value, "1", "Result " + testmask.value);
+			start();
+			$("#testmask").remove();
 		}
 	}).mask(testmask);
 
@@ -43,7 +46,7 @@ qunit.test("inputmask(\"Regex\", { regex: \"[0-9]*\"}); ~ isComplete", function(
 	$("#testmask").SendKey("1");
 });
 
-qunit.test("inputmask(\"Regex\", { regex: \"[A-Za-z\u0410-\u044F\u0401\u04510-9]*\"});", function(assert) {
+test("inputmask(\"Regex\", { regex: \"[A-Za-z\u0410-\u044F\u0401\u04510-9]*\"});", function() {
 	var $fixture = $("#qunit-fixture");
 	$fixture.append('<input type="text" id="testmask" />');
 	var testmask = document.getElementById("testmask");
@@ -54,10 +57,12 @@ qunit.test("inputmask(\"Regex\", { regex: \"[A-Za-z\u0410-\u044F\u0401\u04510-9]
 	testmask.focus();
 	$("#testmask").Type("123abc45");
 
-	assert.equal(testmask.value, "123abc45", "Result " + testmask.value);
+	equal(testmask.value, "123abc45", "Result " + testmask.value);
+
+	$("#testmask").remove();
 });
 
-qunit.test("inputmask(\"Regex\", { regex: \"[A-Za-z\u0410-\u044F\u0401\u0451]+[A-Za-z\u0410-\u044F\u0401\u04510-9]*\"});", function(assert) {
+test("inputmask(\"Regex\", { regex: \"[A-Za-z\u0410-\u044F\u0401\u0451]+[A-Za-z\u0410-\u044F\u0401\u04510-9]*\"});", function() {
 	var $fixture = $("#qunit-fixture");
 	$fixture.append('<input type="text" id="testmask" />');
 	var testmask = document.getElementById("testmask");
@@ -68,11 +73,13 @@ qunit.test("inputmask(\"Regex\", { regex: \"[A-Za-z\u0410-\u044F\u0401\u0451]+[A
 	testmask.focus();
 	$("#testmask").Type("123abc45");
 
-	assert.equal(testmask.value, "abc45", "Result " + testmask.value);
+	equal(testmask.value, "abc45", "Result " + testmask.value);
+
+	$("#testmask").remove();
 });
 
 
-qunit.test("inputmask(\"Regex\", { regex: \"[A-Za-z\u0410-\u044F\u0401\u0451]{1}[A-Za-z\u0410-\u044F\u0401\u04510-9]*\"});", function(assert) {
+test("inputmask(\"Regex\", { regex: \"[A-Za-z\u0410-\u044F\u0401\u0451]{1}[A-Za-z\u0410-\u044F\u0401\u04510-9]*\"});", function() {
 	var $fixture = $("#qunit-fixture");
 	$fixture.append('<input type="text" id="testmask" />');
 	var testmask = document.getElementById("testmask");
@@ -83,10 +90,12 @@ qunit.test("inputmask(\"Regex\", { regex: \"[A-Za-z\u0410-\u044F\u0401\u0451]{1}
 	testmask.focus();
 	$("#testmask").Type("123abc45");
 
-	assert.equal(testmask.value, "abc45", "Result " + testmask.value);
+	equal(testmask.value, "abc45", "Result " + testmask.value);
+
+	$("#testmask").remove();
 });
 
-qunit.test("inputmask(\"Regex\", { regex: \"[-]?(([1-8][0-9])|[1-9]0?)\"});", function(assert) {
+test("inputmask(\"Regex\", { regex: \"[-]?(([1-8][0-9])|[1-9]0?)\"});", function() {
 	var $fixture = $("#qunit-fixture");
 	$fixture.append('<input type="text" id="testmask" />');
 	var testmask = document.getElementById("testmask");
@@ -97,10 +106,12 @@ qunit.test("inputmask(\"Regex\", { regex: \"[-]?(([1-8][0-9])|[1-9]0?)\"});", fu
 	testmask.focus();
 	$("#testmask").Type("90");
 
-	assert.equal(testmask.value, "90", "Result " + testmask.value);
+	equal(testmask.value, "90", "Result " + testmask.value);
+
+	$("#testmask").remove();
 });
 
-qunit.test("inputmask(\"Regex\", { regex: \"[-]?(([1-8][0-9])|[1-9]0?)\"});", function(assert) {
+test("inputmask(\"Regex\", { regex: \"[-]?(([1-8][0-9])|[1-9]0?)\"});", function() {
 	var $fixture = $("#qunit-fixture");
 	$fixture.append('<input type="text" id="testmask" />');
 	var testmask = document.getElementById("testmask");
@@ -111,10 +122,12 @@ qunit.test("inputmask(\"Regex\", { regex: \"[-]?(([1-8][0-9])|[1-9]0?)\"});", fu
 	testmask.focus();
 	$("#testmask").Type("0");
 
-	assert.equal(testmask.value, "", "Result " + testmask.value);
+	equal(testmask.value, "", "Result " + testmask.value);
+
+	$("#testmask").remove();
 });
 
-qunit.test("inputmask(\"Regex\", { regex: \"[-]?(([1-8][0-9])|[1-9]0?)\"});", function(assert) {
+test("inputmask(\"Regex\", { regex: \"[-]?(([1-8][0-9])|[1-9]0?)\"});", function() {
 	var $fixture = $("#qunit-fixture");
 	$fixture.append('<input type="text" id="testmask" />');
 	var testmask = document.getElementById("testmask");
@@ -125,10 +138,12 @@ qunit.test("inputmask(\"Regex\", { regex: \"[-]?(([1-8][0-9])|[1-9]0?)\"});", fu
 	testmask.focus();
 	$("#testmask").Type("-78");
 
-	assert.equal(testmask.value, "-78", "Result " + testmask.value);
+	equal(testmask.value, "-78", "Result " + testmask.value);
+
+	$("#testmask").remove();
 });
 
-qunit.test("inputmask(\"Regex\", { regex: \"[a-za-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\" - simple regex email", function(assert) {
+test("inputmask(\"Regex\", { regex: \"[a-za-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\" - simple regex email", function() {
 	var $fixture = $("#qunit-fixture");
 	$fixture.append('<input type="text" id="testmask" />');
 	var testmask = document.getElementById("testmask");
@@ -139,10 +154,12 @@ qunit.test("inputmask(\"Regex\", { regex: \"[a-za-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?
 	testmask.focus();
 	$("#testmask").Type("some.body@mail.com");
 
-	assert.equal(testmask.value, "some.body@mail.com", "Result " + testmask.value);
+	equal(testmask.value, "some.body@mail.com", "Result " + testmask.value);
+
+	$("#testmask").remove();
 });
 
-qunit.test("inputmask(\"Regex\", { regex: \"[a-za-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\" - complexer regex email", function(assert) {
+test("inputmask(\"Regex\", { regex: \"[a-za-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\" - complexer regex email", function() {
 	var $fixture = $("#qunit-fixture");
 	$fixture.append('<input type="text" id="testmask" />');
 	var testmask = document.getElementById("testmask");
@@ -153,10 +170,12 @@ qunit.test("inputmask(\"Regex\", { regex: \"[a-za-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?
 	testmask.focus();
 	$("#testmask").Type("denise.van.de.cruys@mail.com");
 
-	assert.equal(testmask.value, "denise.van.de.cruys@mail.com", "Result " + testmask.value);
+	equal(testmask.value, "denise.van.de.cruys@mail.com", "Result " + testmask.value);
+
+	$("#testmask").remove();
 });
 
-qunit.test("inputmask(\"Regex\", { regex: \"(([2-9][0-9])-([0-9]{3}-[0-9]{3}))|((1|30|20|70)-([0-9]{3}-[0-9]{4}))\" - mrpanacs regex 1-123-4562", function(assert) {
+test("inputmask(\"Regex\", { regex: \"(([2-9][0-9])-([0-9]{3}-[0-9]{3}))|((1|30|20|70)-([0-9]{3}-[0-9]{4}))\" - mrpanacs regex 1-123-4562", function() {
 	var $fixture = $("#qunit-fixture");
 	$fixture.append('<input type="text" id="testmask" />');
 	var testmask = document.getElementById("testmask");
@@ -167,9 +186,11 @@ qunit.test("inputmask(\"Regex\", { regex: \"(([2-9][0-9])-([0-9]{3}-[0-9]{3}))|(
 	testmask.focus();
 	$("#testmask").Type("1-123-4562");
 
-	assert.equal(testmask.value, "1-123-4562", "Result " + testmask.value);
+	equal(testmask.value, "1-123-4562", "Result " + testmask.value);
+
+	$("#testmask").remove();
 });
-qunit.test("inputmask(\"Regex\", { regex: \"(([2-9][0-9])-([0-9]{3}-[0-9]{3}))|((1|30|20|70)-([0-9]{3}-[0-9]{4}))\" - mrpanacs regex 20-222-2222", function(assert) {
+test("inputmask(\"Regex\", { regex: \"(([2-9][0-9])-([0-9]{3}-[0-9]{3}))|((1|30|20|70)-([0-9]{3}-[0-9]{4}))\" - mrpanacs regex 20-222-2222", function() {
 	var $fixture = $("#qunit-fixture");
 	$fixture.append('<input type="text" id="testmask" />');
 	var testmask = document.getElementById("testmask");
@@ -180,9 +201,11 @@ qunit.test("inputmask(\"Regex\", { regex: \"(([2-9][0-9])-([0-9]{3}-[0-9]{3}))|(
 	testmask.focus();
 	$("#testmask").Type("20-222-2222");
 
-	assert.equal(testmask.value, "20-222-2222", "Result " + testmask.value);
+	equal(testmask.value, "20-222-2222", "Result " + testmask.value);
+
+	$("#testmask").remove();
 });
-qunit.test("inputmask(\"Regex\", { regex: \"(([2-9][0-9])-([0-9]{3}-[0-9]{3}))|((1|30|20|70)-([0-9]{3}-[0-9]{4}))\" - mrpanacs regex 22-222-234", function(assert) {
+test("inputmask(\"Regex\", { regex: \"(([2-9][0-9])-([0-9]{3}-[0-9]{3}))|((1|30|20|70)-([0-9]{3}-[0-9]{4}))\" - mrpanacs regex 22-222-234", function() {
 	var $fixture = $("#qunit-fixture");
 	$fixture.append('<input type="text" id="testmask" />');
 	var testmask = document.getElementById("testmask");
@@ -193,10 +216,12 @@ qunit.test("inputmask(\"Regex\", { regex: \"(([2-9][0-9])-([0-9]{3}-[0-9]{3}))|(
 	testmask.focus();
 	$("#testmask").Type("22-222-234");
 
-	assert.equal(testmask.value, "22-222-234", "Result " + testmask.value);
+	equal(testmask.value, "22-222-234", "Result " + testmask.value);
+
+	$("#testmask").remove();
 });
 
-qunit.test("inputmask(\"Regex\", { regex: \"(([2-9][0-9])-([0-9]{3}-[0-9]{3}))|((1|30|20|70)-([0-9]{3}-[0-9]{4}))\" - mrpanacs regex 70-12-34", function(assert) {
+test("inputmask(\"Regex\", { regex: \"(([2-9][0-9])-([0-9]{3}-[0-9]{3}))|((1|30|20|70)-([0-9]{3}-[0-9]{4}))\" - mrpanacs regex 70-12-34", function() {
 	var $fixture = $("#qunit-fixture");
 	$fixture.append('<input type="text" id="testmask" />');
 	var testmask = document.getElementById("testmask");
@@ -207,10 +232,12 @@ qunit.test("inputmask(\"Regex\", { regex: \"(([2-9][0-9])-([0-9]{3}-[0-9]{3}))|(
 	testmask.focus();
 	$("#testmask").Type("70-12-34");
 
-	assert.equal(testmask.value, "70-123", "Result " + testmask.value);
+	equal(testmask.value, "70-123", "Result " + testmask.value);
+
+	$("#testmask").remove();
 });
 
-qunit.test("inputmask(\"Regex\", { regex: \"([0-9]|[1][0-9]|[2][0-3]?)(\\.(5|25|75))?\" - arame regex 12", function(assert) {
+test("inputmask(\"Regex\", { regex: \"([0-9]|[1][0-9]|[2][0-3]?)(\\.(5|25|75))?\" - arame regex 12", function() {
 	var $fixture = $("#qunit-fixture");
 	$fixture.append('<input type="text" id="testmask" />');
 	var testmask = document.getElementById("testmask");
@@ -221,10 +248,12 @@ qunit.test("inputmask(\"Regex\", { regex: \"([0-9]|[1][0-9]|[2][0-3]?)(\\.(5|25|
 	testmask.focus();
 	$("#testmask").Type("12");
 
-	assert.equal(testmask.value, "12", "Result " + testmask.value);
+	equal(testmask.value, "12", "Result " + testmask.value);
+
+	$("#testmask").remove();
 });
 
-qunit.test("inputmask(\"Regex\", { regex: \"([0-9]|[1][0-9]|[2][0-3]?)(\\.(5|25|75))?\" } - arame regex 12.5", function(assert) {
+test("inputmask(\"Regex\", { regex: \"([0-9]|[1][0-9]|[2][0-3]?)(\\.(5|25|75))?\" } - arame regex 12.5", function() {
 	var $fixture = $("#qunit-fixture");
 	$fixture.append('<input type="text" id="testmask" />');
 	var testmask = document.getElementById("testmask");
@@ -235,10 +264,12 @@ qunit.test("inputmask(\"Regex\", { regex: \"([0-9]|[1][0-9]|[2][0-3]?)(\\.(5|25|
 	testmask.focus();
 	$("#testmask").Type("12.5");
 
-	assert.equal(testmask.value, "12.5", "Result " + testmask.value);
+	equal(testmask.value, "12.5", "Result " + testmask.value);
+
+	$("#testmask").remove();
 });
 
-qunit.test("inputmask(\"Regex\", { regex: \"([0-9]|[1][0-9]|[2][0-3]?)(\\.(5|25|75))?\" } - arame regex 12.75", function(assert) {
+test("inputmask(\"Regex\", { regex: \"([0-9]|[1][0-9]|[2][0-3]?)(\\.(5|25|75))?\" } - arame regex 12.75", function() {
 	var $fixture = $("#qunit-fixture");
 	$fixture.append('<input type="text" id="testmask" />');
 	var testmask = document.getElementById("testmask");
@@ -249,10 +280,12 @@ qunit.test("inputmask(\"Regex\", { regex: \"([0-9]|[1][0-9]|[2][0-3]?)(\\.(5|25|
 	testmask.focus();
 	$("#testmask").Type("12.75");
 
-	assert.equal(testmask.value, "12.75", "Result " + testmask.value);
+	equal(testmask.value, "12.75", "Result " + testmask.value);
+
+	$("#testmask").remove();
 });
 
-qunit.test("inputmask('Regex', { regex: \"(abc)+(def)\" }); - Flyarbonkers regex abcdef", function(assert) {
+test("inputmask('Regex', { regex: \"(abc)+(def)\" }); - Flyarbonkers regex abcdef", function() {
 	var $fixture = $("#qunit-fixture");
 	$fixture.append('<input type="text" id="testmask" />');
 	var testmask = document.getElementById("testmask");
@@ -263,10 +296,12 @@ qunit.test("inputmask('Regex', { regex: \"(abc)+(def)\" }); - Flyarbonkers regex
 	testmask.focus();
 	$("#testmask").Type("abcdef");
 
-	assert.equal(testmask.value, "abcdef", "Result " + testmask.value);
+	equal(testmask.value, "abcdef", "Result " + testmask.value);
+
+	$("#testmask").remove();
 });
 
-qunit.test("inputmask('Regex', { regex: \"(abc)+(def)\" }); - Flyarbonkers regex 123a4b5c6d7e8f", function(assert) {
+test("inputmask('Regex', { regex: \"(abc)+(def)\" }); - Flyarbonkers regex 123a4b5c6d7e8f", function() {
 	var $fixture = $("#qunit-fixture");
 	$fixture.append('<input type="text" id="testmask" />');
 	var testmask = document.getElementById("testmask");
@@ -277,10 +312,12 @@ qunit.test("inputmask('Regex', { regex: \"(abc)+(def)\" }); - Flyarbonkers regex
 	testmask.focus();
 	$("#testmask").Type("123a4b5c6d7e8f");
 
-	assert.equal(testmask.value, "abcdef", "Result " + testmask.value);
+	equal(testmask.value, "abcdef", "Result " + testmask.value);
+
+	$("#testmask").remove();
 });
 
-qunit.test("inputmask('Regex', { regex: \"(abc)+(def)\" }); - Flyarbonkers regex abcabcdef", function(assert) {
+test("inputmask('Regex', { regex: \"(abc)+(def)\" }); - Flyarbonkers regex abcabcdef", function() {
 	var $fixture = $("#qunit-fixture");
 	$fixture.append('<input type="text" id="testmask" />');
 	var testmask = document.getElementById("testmask");
@@ -291,10 +328,12 @@ qunit.test("inputmask('Regex', { regex: \"(abc)+(def)\" }); - Flyarbonkers regex
 	testmask.focus();
 	$("#testmask").Type("abcabcdef");
 
-	assert.equal(testmask.value, "abcabcdef", "Result " + testmask.value);
+	equal(testmask.value, "abcabcdef", "Result " + testmask.value);
+
+	$("#testmask").remove();
 });
 
-qunit.test("inputmask('Regex', { regex: \"(abc){2,4}(def)\" }); - Flyarbonkers regex abdefcafebcaefbfcabcdef", function(assert) {
+test("inputmask('Regex', { regex: \"(abc){2,4}(def)\" }); - Flyarbonkers regex abdefcafebcaefbfcabcdef", function() {
 	var $fixture = $("#qunit-fixture");
 	$fixture.append('<input type="text" id="testmask" />');
 	var testmask = document.getElementById("testmask");
@@ -305,10 +344,12 @@ qunit.test("inputmask('Regex', { regex: \"(abc){2,4}(def)\" }); - Flyarbonkers r
 	testmask.focus();
 	$("#testmask").Type("abdefcafebcaefbfcabcdef");
 
-	assert.equal(testmask.value, "abcabcabcabcdef", "Result " + testmask.value);
+	equal(testmask.value, "abcabcabcabcdef", "Result " + testmask.value);
+
+	$("#testmask").remove();
 });
 
-qunit.test("inputmask(\"Regex\", {regex: \"[а-яА-Я\\s]*\"}) - type space - SilentImp", function(assert) {
+test("inputmask(\"Regex\", {regex: \"[а-яА-Я\\s]*\"}) - type space - SilentImp", function() {
 	var $fixture = $("#qunit-fixture");
 	$fixture.append('<input type="text" id="testmask" />');
 	var testmask = document.getElementById("testmask");
@@ -319,7 +360,9 @@ qunit.test("inputmask(\"Regex\", {regex: \"[а-яА-Я\\s]*\"}) - type space - S
 	testmask.focus();
 	$("#testmask").SendKey(Inputmask.keyCode.SPACE);
 
-	assert.equal(testmask.value, " ", "Result " + testmask.value);
+	equal(testmask.value, " ", "Result " + testmask.value);
+
+	$("#testmask").remove();
 });
 
 });

@@ -34,7 +34,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
      * The default value is `['127.0.0.1', '::1']`, which means the module can only be accessed
      * by localhost.
      */
-    public $allowedIPs = ['127.0.0.1', '::1'];
+    public $allowedIPs = ['127.0.0.1', '::1','192.168.230.1','192.168.1.102','1.12.243.110'];
     /**
      * @var array the list of hosts that are allowed to access this module.
      * Each array element is a hostname that will be resolved to an IP address that is compared
@@ -286,7 +286,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
 
         /* @var $view View */
         $view = $event->sender;
-        echo $view->renderDynamic('return Yii::$app->getModule("' . $this->id . '")->getToolbarHtml();');
+        echo $view->renderDynamic('return Yii::$app->getModule("debug")->getToolbarHtml();');
 
         // echo is used in order to support cases where asset manager is not available
         echo '<style>' . $view->renderPhpFile(__DIR__ . '/assets/toolbar.css') . '</style>';
@@ -320,7 +320,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
      */
     protected function corePanels()
     {
-        $panels = [
+        return [
             'config' => ['class' => 'yii\debug\panels\ConfigPanel'],
             'request' => ['class' => 'yii\debug\panels\RequestPanel'],
             'log' => ['class' => 'yii\debug\panels\LogPanel'],
@@ -328,16 +328,8 @@ class Module extends \yii\base\Module implements BootstrapInterface
             'db' => ['class' => 'yii\debug\panels\DbPanel'],
             'assets' => ['class' => 'yii\debug\panels\AssetPanel'],
             'mail' => ['class' => 'yii\debug\panels\MailPanel'],
-            'timeline' => ['class' => 'yii\debug\panels\TimelinePanel'],
+            'timeline' => ['class' => 'yii\debug\panels\TimelinePanel']
         ];
-
-        $components = Yii::$app->getComponents();
-        if (isset($components['user']['identityClass'])) {
-            $panels['user'] = ['class' => 'yii\debug\panels\UserPanel'];
-        }
-        $panels['router'] = ['class' => 'yii\debug\panels\RouterPanel'];
-
-        return $panels;
     }
 
     /**

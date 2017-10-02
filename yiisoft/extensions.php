@@ -21,6 +21,15 @@ return array (
       '@yii/bootstrap' => $vendorDir . '/yiisoft/yii2-bootstrap',
     ),
   ),
+  'yiisoft/yii2-debug' => 
+  array (
+    'name' => 'yiisoft/yii2-debug',
+    'version' => '2.0.7.0',
+    'alias' => 
+    array (
+      '@yii/debug' => $vendorDir . '/yiisoft/yii2-debug',
+    ),
+  ),
   'yiisoft/yii2-gii' => 
   array (
     'name' => 'yiisoft/yii2-gii',
@@ -42,7 +51,7 @@ return array (
   'rmrevin/yii2-fontawesome' => 
   array (
     'name' => 'rmrevin/yii2-fontawesome',
-    'version' => '2.17.1.0',
+    'version' => '2.17.0.0',
     'alias' => 
     array (
       '@rmrevin/yii/fontawesome' => $vendorDir . '/rmrevin/yii2-fontawesome',
@@ -66,6 +75,69 @@ return array (
       '@dmstr' => $vendorDir . '/dmstr/yii2-adminlte-asset',
     ),
   ),
+  'kartik-v/yii2-krajee-base' => 
+  array (
+    'name' => 'kartik-v/yii2-krajee-base',
+    'version' => '1.8.7.0',
+    'alias' => 
+    array (
+      '@kartik/base' => $vendorDir . '/kartik-v/yii2-krajee-base',
+    ),
+  ),
+  'kartik-v/yii2-widget-fileinput' => 
+  array (
+    'name' => 'kartik-v/yii2-widget-fileinput',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@kartik/file' => $vendorDir . '/kartik-v/yii2-widget-fileinput',
+    ),
+  ),
+  'yiidoc/yii2-redactor' => 
+  array (
+    'name' => 'yiidoc/yii2-redactor',
+    'version' => '2.0.1.0',
+    'alias' => 
+    array (
+      '@yii/redactor' => '/',
+    ),
+  ),
+  'kartik-v/yii2-widget-alert' => 
+  array (
+    'name' => 'kartik-v/yii2-widget-alert',
+    'version' => '1.1.0.0',
+    'alias' => 
+    array (
+      '@kartik/alert' => $vendorDir . '/kartik-v/yii2-widget-alert',
+    ),
+  ),
+  '2amigos/yii2-date-picker-widget' => 
+  array (
+    'name' => '2amigos/yii2-date-picker-widget',
+    'version' => '1.0.5.0',
+    'alias' => 
+    array (
+      '@dosamigos/datepicker' => $vendorDir . '/2amigos/yii2-date-picker-widget/src',
+    ),
+  ),
+  'kartik-v/yii2-grid' => 
+  array (
+    'name' => 'kartik-v/yii2-grid',
+    'version' => '3.1.1.0',
+    'alias' => 
+    array (
+      '@kartik/grid' => $vendorDir . '/kartik-v/yii2-grid',
+    ),
+  ),
+  '2amigos/yii2-qrcode-helper' => 
+  array (
+    'name' => '2amigos/yii2-qrcode-helper',
+    'version' => '1.0.2.0',
+    'alias' => 
+    array (
+      '@dosamigos/qrcode' => $vendorDir . '/2amigos/yii2-qrcode-helper/src',
+    ),
+  ),
   'yiisoft/yii2-redis' => 
   array (
     'name' => 'yiisoft/yii2-redis',
@@ -75,31 +147,13 @@ return array (
       '@yii/redis' => $vendorDir . '/yiisoft/yii2-redis',
     ),
   ),
-  'yiisoft/yii2-debug' => 
+  'crazyfd/yii2-qiniu' => 
   array (
-    'name' => 'yiisoft/yii2-debug',
-    'version' => '2.0.9.0',
+    'name' => 'crazyfd/yii2-qiniu',
+    'version' => '9999999-dev',
     'alias' => 
     array (
-      '@yii/debug' => $vendorDir . '/yiisoft/yii2-debug',
-    ),
-  ),
-  'yiisoft/yii2-mongodb' => 
-  array (
-    'name' => 'yiisoft/yii2-mongodb',
-    'version' => '2.1.3.0',
-    'alias' => 
-    array (
-      '@yii/mongodb' => $vendorDir . '/yiisoft/yii2-mongodb',
-    ),
-  ),
-  'm35/thecsv' => 
-  array (
-    'name' => 'm35/thecsv',
-    'version' => '1.0.0.0',
-    'alias' => 
-    array (
-      '@m35/thecsv' => $vendorDir . '/m35/thecsv',
+      '@crazyfd/qiniu' => $vendorDir . '/crazyfd/yii2-qiniu',
     ),
   ),
 );

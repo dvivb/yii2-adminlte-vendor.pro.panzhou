@@ -1,8 +1,8 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
 	function createBanner(fileName) {
 		return "/*!\n" +
 			"* " + fileName + "\n" +
-			"* <%= pkg.homepage %>\n" +
+			"* http://github.com/RobinHerbots/jquery.inputmask\n" +
 			"* Copyright (c) 2010 - <%= grunt.template.today('yyyy') %> <%= pkg.author.name %>\n" +
 			"* Licensed under the MIT license (http://www.opensource.org/licenses/mit-license.php)\n" +
 			"* Version: <%= pkg.version %>\n" +
@@ -12,15 +12,12 @@ module.exports = function (grunt) {
 	function createUglifyConfig(path) {
 		function stripModuleLoaders(src, dst) {
 			var srcFile = grunt.file.read(src);
-			if (src.indexOf("inputmask.config") === -1) {
-				srcFile = srcFile.replace(new RegExp("\\(function\\s?\\(factory\\)[\\s\\S]*\\(function\\s?\\(\\$"), "(function ($");
-				if (src.indexOf("extensions") === -1 && src.indexOf("jquery.inputmask") === -1) {
-					srcFile = srcFile.replace(new RegExp("\\}\\)\\);[\\s]*$"), "})(jQuery);");
-				} else srcFile = srcFile.replace(new RegExp("\\}\\)\\);[\\s]*$"), "})(jQuery, Inputmask);");
-			}
+			srcFile = srcFile.replace(new RegExp("\\(function\\(factory\\)[\\s\\S]*\\(function\\(\\$"), "(function($");
+			if (src.indexOf("extensions") === -1 && src.indexOf("jquery.inputmask") === -1) {
+				srcFile = srcFile.replace(new RegExp("\\}\\)\\);[\\s]*$"), "})(jQuery);");
+			} else srcFile = srcFile.replace(new RegExp("\\}\\)\\);[\\s]*$"), "})(jQuery, Inputmask);");
 			grunt.file.write(dst, srcFile);
 		}
-
 		var uglifyConfig = {};
 		var srcFiles = grunt.file.expand(path + "/*.js");
 		for (var srcNdx in srcFiles) {
@@ -33,7 +30,7 @@ module.exports = function (grunt) {
 					banner: createBanner(dstFile),
 					beautify: true,
 					mangle: false,
-					preserveComments: false,
+					preserveComments: "some",
 					ASCIIOnly: true
 				}
 			};
@@ -42,14 +39,13 @@ module.exports = function (grunt) {
 				src: srcFiles[srcNdx],
 				options: {
 					banner: createBanner(dstFileMin),
-					preserveComments: false,
+					preserveComments: "some",
 					ASCIIOnly: true
 				}
 			};
 
 			stripModuleLoaders("js/" + dstFile, "build/" + dstFile);
 		}
-
 		srcFiles = grunt.file.expand("build/*.extensions.js");
 		srcFiles.splice(0, 0, "build/jquery.inputmask.js");
 		srcFiles.splice(0, 0, "build/inputmask.js");
@@ -60,7 +56,7 @@ module.exports = function (grunt) {
 				banner: createBanner("jquery.inputmask.bundle.js"),
 				beautify: true,
 				mangle: false,
-				preserveComments: false,
+				preserveComments: "some",
 				ASCIIOnly: true
 			}
 		};
@@ -69,7 +65,7 @@ module.exports = function (grunt) {
 			src: srcFiles,
 			options: {
 				banner: createBanner("jquery.inputmask.bundle.js"),
-				preserveComments: false,
+				preserveComments: "some",
 				ASCIIOnly: true
 			}
 		};
@@ -77,7 +73,7 @@ module.exports = function (grunt) {
 		return uglifyConfig;
 	}
 
-// Project configuration.
+	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON("package.json"),
 		uglify: createUglifyConfig("js"),
@@ -110,7 +106,7 @@ module.exports = function (grunt) {
 		},
 		nugetpack: {
 			dist: {
-				src: function () {
+				src: function() {
 					return process.platform === "linux" ? 'nuspecs/jquery.inputmask.linux.nuspec' : 'nuspecs/jquery.inputmask.nuspec';
 				}(),
 				dest: 'dist/',
@@ -145,7 +141,7 @@ module.exports = function (grunt) {
 			tasks: {
 				options: {
 					filter: 'exclude',
-					tasks: ['availabletasks', 'default', 'updateDistConfig'],
+					tasks: ['availabletasks', 'default'],
 					showTasks: ['user']
 				}
 			}
@@ -161,7 +157,7 @@ module.exports = function (grunt) {
 		}
 	});
 
-// Load the plugin that provides the tasks.
+	// Load the plugin that provides the tasks.
 	require('load-grunt-tasks')(grunt);
 
 	grunt.registerTask('publish:patch', ['clean', 'bump:patch', 'uglify', 'shell:gitcommitchanges', 'release', 'nugetpack', 'nugetpush']);
@@ -170,4 +166,5 @@ module.exports = function (grunt) {
 	grunt.registerTask('validate', ['eslint', 'browserify', 'karma']);
 	grunt.registerTask('build', ['bump:prerelease', 'clean', 'uglify']);
 	grunt.registerTask('default', ["availabletasks"]);
+
 };

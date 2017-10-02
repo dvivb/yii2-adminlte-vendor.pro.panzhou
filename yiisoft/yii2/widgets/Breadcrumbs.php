@@ -64,7 +64,7 @@ class Breadcrumbs extends Widget
      */
     public $options = ['class' => 'breadcrumb'];
     /**
-     * @var bool whether to HTML-encode the link labels.
+     * @var boolean whether to HTML-encode the link labels.
      */
     public $encodeLabels = true;
     /**
@@ -136,7 +136,7 @@ class Breadcrumbs extends Widget
         $links = [];
         if ($this->homeLink === null) {
             $links[] = $this->renderItem([
-                'label' => Yii::t('yii', 'Home'),
+                'label' => Yii::t('yii', '首页'),
                 'url' => Yii::$app->homeUrl,
             ], $this->itemTemplate);
         } elseif ($this->homeLink !== false) {
