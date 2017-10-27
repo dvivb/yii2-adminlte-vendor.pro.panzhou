@@ -39,8 +39,8 @@
                         'icon' => 'fa fa-user',
                         'url' => '#',
                         'items' => [
-                            ['label' => '项目列表', 'icon' => 'fa fa-users', 'url' => ['#'],],
-                            ['label' => '项目新增', 'icon' => 'fa fa-users', 'url' => ['#'],],
+                            ['label' => '项目列表', 'icon' => 'fa fa-users', 'url' => ['/project/project'],],
+                            ['label' => '项目新增', 'icon' => 'fa fa-users', 'url' => ['/project/project/add'],],
                             
                         ],
                     ],
