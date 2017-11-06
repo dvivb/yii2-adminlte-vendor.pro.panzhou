@@ -156,4 +156,13 @@ return array (
       '@crazyfd/qiniu' => $vendorDir . '/crazyfd/yii2-qiniu',
     ),
   ),
+    'm35/thecsv' =>
+    array (
+        'name' => 'm35/thecsv',
+        'version' => '1.0.0.0',
+        'alias' =>
+        array (
+            '@m35/thecsv' => $vendorDir . '/m35/thecsv',
+        ),
+    ),
 );
