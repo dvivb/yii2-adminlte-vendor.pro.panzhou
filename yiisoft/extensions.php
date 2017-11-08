@@ -164,6 +164,7 @@ return array (
     array (
       '@m35/thecsv' => $vendorDir . '/m35/thecsv',
     ),
+<<<<<<< HEAD
   ),
   'moonlandsoft/yii2-phpexcel' => 
   array (
@@ -174,4 +175,15 @@ return array (
       '@moonland/phpexcel' => $vendorDir . '/moonlandsoft/yii2-phpexcel',
     ),
   ),
+=======
+    'PHPExcel/Classes' =>
+    array (
+        'name' => 'PHPExcel/Classes',
+        'version' => '1.8',
+        'alias' =>
+            array (
+                '@PHPExcel/Classes' => $vendorDir . '/PHPExcel/Classes',
+            ),
+    ),
+>>>>>>> 2e8d54c47b88932fc8e388ebf079f0dc1178e2a9
 );
