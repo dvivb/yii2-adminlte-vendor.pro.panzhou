@@ -165,4 +165,13 @@ return array (
             '@m35/thecsv' => $vendorDir . '/m35/thecsv',
         ),
     ),
+    'PHPExcel/Classes' =>
+    array (
+        'name' => 'PHPExcel/Classes',
+        'version' => '1.8',
+        'alias' =>
+            array (
+                '@PHPExcel/Classes' => $vendorDir . '/PHPExcel/Classes',
+            ),
+    ),
 );
