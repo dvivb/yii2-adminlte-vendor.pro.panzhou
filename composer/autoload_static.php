@@ -34,6 +34,10 @@ class ComposerStaticInit63507166d8bef8dfd20958e3fefab479
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'm' => 
+        array (
+            'moonland\\phpexcel\\' => 18,
+        ),
         'k' => 
         array (
             'kartik\\plugins\\fileinput\\' => 25,
@@ -48,7 +52,6 @@ class ComposerStaticInit63507166d8bef8dfd20958e3fefab479
         ),
         'c' => 
         array (
-            'crazyfd\\qiniu\\' => 14,
             'cebe\\markdown\\' => 14,
         ),
         'W' => 
@@ -135,6 +138,10 @@ class ComposerStaticInit63507166d8bef8dfd20958e3fefab479
             1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
         ),
+        'moonland\\phpexcel\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/moonlandsoft/yii2-phpexcel',
+        ),
         'kartik\\plugins\\fileinput\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/bootstrap-fileinput',
@@ -158,10 +165,6 @@ class ComposerStaticInit63507166d8bef8dfd20958e3fefab479
         'dmstr\\' => 
         array (
             0 => __DIR__ . '/..' . '/dmstr/yii2-adminlte-asset',
-        ),
-        'crazyfd\\qiniu\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/crazyfd/yii2-qiniu',
         ),
         'cebe\\markdown\\' => 
         array (
@@ -254,6 +257,10 @@ class ComposerStaticInit63507166d8bef8dfd20958e3fefab479
             'Prophecy\\' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
+            ),
+            'PHPExcel' => 
+            array (
+                0 => __DIR__ . '/..' . '/phpoffice/phpexcel/Classes',
             ),
         ),
         'H' => 

@@ -156,13 +156,22 @@ return array (
       '@crazyfd/qiniu' => $vendorDir . '/crazyfd/yii2-qiniu',
     ),
   ),
-    'm35/thecsv' =>
+  'm35/thecsv' => 
+  array (
+    'name' => 'm35/thecsv',
+    'version' => '1.0.0.0',
+    'alias' => 
     array (
-        'name' => 'm35/thecsv',
-        'version' => '1.0.0.0',
-        'alias' =>
-        array (
-            '@m35/thecsv' => $vendorDir . '/m35/thecsv',
-        ),
+      '@m35/thecsv' => $vendorDir . '/m35/thecsv',
     ),
+  ),
+  'moonlandsoft/yii2-phpexcel' => 
+  array (
+    'name' => 'moonlandsoft/yii2-phpexcel',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@moonland/phpexcel' => $vendorDir . '/moonlandsoft/yii2-phpexcel',
+    ),
+  ),
 );
