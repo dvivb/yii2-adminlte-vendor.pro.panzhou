@@ -184,13 +184,4 @@ array (
       '@moonland/phpexcel' => $vendorDir . '/moonlandsoft/yii2-phpexcel',
     ),
   ),
-    'PHPExcel/Classes' =>
-    array (
-        'name' => 'PHPExcel/Classes',
-        'version' => '1.8',
-        'alias' =>
-            array (
-                '@PHPExcel/Classes' => $vendorDir . '/PHPExcel/Classes',
-            ),
-    ),
 );
