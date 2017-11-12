@@ -120,15 +120,15 @@ return array (
       '@dosamigos/datepicker' => $vendorDir . '/2amigos/yii2-date-picker-widget/src',
     ),
   ),
-'2amigos/yii2-date-time-picker-widget-master' =>
-array (
+  '2amigos/yii2-date-time-picker-widget-master' => 
+  array (
     'name' => '2amigos/yii2-date-time-picker-widget-master',
     'version' => '1.0.5.0',
-    'alias' =>
+    'alias' => 
     array (
-        '@dosamigos/datetimepicker' => $vendorDir . '/2amigos/yii2-date-picker-widget/src',
+      '@dosamigos/datetimepicker' => $vendorDir . '/2amigos/yii2-date-picker-widget/src',
     ),
-),
+  ),
   'kartik-v/yii2-grid' => 
   array (
     'name' => 'kartik-v/yii2-grid',
@@ -173,7 +173,6 @@ array (
     array (
       '@m35/thecsv' => $vendorDir . '/m35/thecsv',
     ),
-
   ),
   'moonlandsoft/yii2-phpexcel' => 
   array (
@@ -182,6 +181,24 @@ array (
     'alias' => 
     array (
       '@moonland/phpexcel' => $vendorDir . '/moonlandsoft/yii2-phpexcel',
+    ),
+  ),
+  'kartik-v/yii2-widget-datetimepicker' => 
+  array (
+    'name' => 'kartik-v/yii2-widget-datetimepicker',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@kartik/datetime' => $vendorDir . '/kartik-v/yii2-widget-datetimepicker',
+    ),
+  ),
+  '2amigos/yii2-date-time-picker-widget' => 
+  array (
+    'name' => '2amigos/yii2-date-time-picker-widget',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@dosamigos/datetimepicker' => $vendorDir . '/2amigos/yii2-date-time-picker-widget/src',
     ),
   ),
 );

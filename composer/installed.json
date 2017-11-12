@@ -3724,5 +3724,138 @@
             "xls",
             "yii2"
         ]
+    },
+    {
+        "name": "kartik-v/yii2-widget-datetimepicker",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kartik-v/yii2-widget-datetimepicker.git",
+            "reference": "36f8327bbac47da7f3a38c94f0546308337aa963"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/kartik-v/yii2-widget-datetimepicker/36f8327bbac47da7f3a38c94f0546308337aa963.zip",
+            "reference": "36f8327bbac47da7f3a38c94f0546308337aa963",
+            "shasum": ""
+        },
+        "require": {
+            "kartik-v/yii2-krajee-base": "*"
+        },
+        "time": "2017-07-18T08:42:00+00:00",
+        "type": "yii2-extension",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "kartik\\datetime\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Kartik Visweswaran",
+                "email": "kartikv2@gmail.com",
+                "homepage": "http://www.krajee.com/"
+            }
+        ],
+        "description": "Enhanced Yii2 wrapper for the bootstrap datetimepicker plugin (sub repo split from yii2-widgets)",
+        "homepage": "https://github.com/kartik-v/yii2-widget-datetimepicker",
+        "keywords": [
+            "datetime",
+            "extension",
+            "form",
+            "jquery",
+            "picker",
+            "plugin",
+            "select2",
+            "widget",
+            "yii2"
+        ]
+    },
+    {
+        "name": "bower-asset/smalot-bootstrap-datetimepicker",
+        "version": "2.4.4",
+        "version_normalized": "2.4.4.0",
+        "source": {
+            "type": "git",
+            "url": "git@github.com:smalot/bootstrap-datetimepicker.git",
+            "reference": "32143c8b45575e51c92a8e29997cbe556d1bbba3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/smalot/bootstrap-datetimepicker/zipball/32143c8b45575e51c92a8e29997cbe556d1bbba3",
+            "reference": "32143c8b45575e51c92a8e29997cbe556d1bbba3",
+            "shasum": null
+        },
+        "type": "bower-asset",
+        "installation-source": "dist"
+    },
+    {
+        "name": "2amigos/yii2-date-time-picker-widget",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/2amigos/yii2-date-time-picker-widget.git",
+            "reference": "721a23e245b3b2a5ca2669e9a35a4ebdab321c8c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/2amigos/yii2-date-time-picker-widget/721a23e245b3b2a5ca2669e9a35a4ebdab321c8c.zip",
+            "reference": "721a23e245b3b2a5ca2669e9a35a4ebdab321c8c",
+            "shasum": ""
+        },
+        "require": {
+            "bower-asset/smalot-bootstrap-datetimepicker": "2.4.4",
+            "yiisoft/yii2": "~2.0",
+            "yiisoft/yii2-bootstrap": "~2.0.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.*",
+            "scrutinizer/ocular": "~1.1"
+        },
+        "time": "2017-07-05T05:38:36+00:00",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            },
+            "asset-installer-paths": {
+                "bower-asset-library": "vendor/bower"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "dosamigos\\datetimepicker\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "2amigOS! Consulting Group",
+                "email": "hola@2amigos.us",
+                "homepage": "http://2amigos.us",
+                "role": "Developer"
+            }
+        ],
+        "description": "Bootstrap DateTimePicker widget for Yii2.",
+        "homepage": "http://yiiwheels.com/extension/bootstrap-datetimepicker",
+        "keywords": [
+            "2amigos",
+            "DateTimePicker",
+            "extension",
+            "widget",
+            "yii",
+            "yii 2",
+            "yii2"
+        ]
     }
 ]

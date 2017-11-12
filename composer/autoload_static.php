@@ -43,11 +43,13 @@ class ComposerStaticInit63507166d8bef8dfd20958e3fefab479
             'kartik\\plugins\\fileinput\\' => 25,
             'kartik\\grid\\' => 12,
             'kartik\\file\\' => 12,
+            'kartik\\datetime\\' => 16,
             'kartik\\base\\' => 12,
             'kartik\\alert\\' => 13,
         ),
         'd' => 
         array (
+            'dosamigos\\datetimepicker\\' => 25,
             'dmstr\\' => 6,
         ),
         'c' => 
@@ -154,6 +156,10 @@ class ComposerStaticInit63507166d8bef8dfd20958e3fefab479
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-fileinput',
         ),
+        'kartik\\datetime\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-datetimepicker',
+        ),
         'kartik\\base\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-krajee-base',
@@ -161,6 +167,10 @@ class ComposerStaticInit63507166d8bef8dfd20958e3fefab479
         'kartik\\alert\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-alert',
+        ),
+        'dosamigos\\datetimepicker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/2amigos/yii2-date-time-picker-widget/src',
         ),
         'dmstr\\' => 
         array (
